@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-bg: #0a0a0b;
+  --color-bg-raised: #131316;
+  --color-bg-panel: #17171a;
+  --color-bg-panel-2: #1c1c20;
+  --color-border: #2a2a2e;
+  --color-border-soft: #202024;
+  --color-border-strong: #3a3a40;
+
+  --color-ink-100: #f3f3f5;
+  --color-ink-200: #d4d4d8;
+  --color-ink-300: #a3a3aa;
+  --color-ink-400: #75757c;
+  --color-ink-500: #4d4d53;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink-200);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: #3a3a40;
+  color: #f3f3f5;
+}
+
+/* subtle grain / noise so the flat black doesn't look dead */
+.bg-noise {
+  position: relative;
+}
+.bg-noise::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.pipeline-line {
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--color-border-strong) 0px,
+    var(--color-border-strong) 4px,
+    transparent 4px,
+    transparent 10px
+  );
+}
+
+.pipeline-line-h {
+  background: repeating-linear-gradient(
+    to right,
+    var(--color-border-strong) 0px,
+    var(--color-border-strong) 4px,
+    transparent 4px,
+    transparent 10px
+  );
+}
+
+@keyframes blink {
+  0%, 45% { opacity: 1; }
+  50%, 95% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.cursor-blink {
+  animation: blink 1.1s steps(1) infinite;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
