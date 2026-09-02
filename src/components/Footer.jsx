@@ -9,42 +9,63 @@ import {
 import { MdEmail } from 'react-icons/md';
 
 import logo from '../assets/images/horizontal-logo.png';
+import gradientImage from '../assets/images/gradient-overlay.jpg';
+import { scrollToSection } from '../utils/scroll';
+
+// Reusable footer nav link — matches LinkTag hover/active behaviour
+const FooterLink = ({ label, sectionId }) => {
+	return (
+		<button
+			onClick={() => scrollToSection(sectionId)}
+			className='group relative w-fit pb-1 text-sm text-[var(--black)] transition-all duration-300 ease-in-out hover:font-medium'
+		>
+			{label}
+			<span
+				className='absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-300 ease-in-out group-hover:w-full'
+				style={{
+					backgroundImage: `url(${gradientImage})`,
+					backgroundSize: 'cover',
+					backgroundPosition: 'center',
+				}}
+			/>
+		</button>
+	);
+};
 
 const Footer = () => {
-	const exploreLinks = ['Home', 'About', 'Service', 'Our Process', 'Contact'];
-
-	const serviceLinks = [
-		'Branding',
-		'UI/UX Design',
-		'Web Development',
-		'Custom Software',
+	const exploreLinks = [
+		{ label: 'Home', sectionId: 'home' },
+		{ label: 'About', sectionId: 'about' },
+		{ label: 'Service', sectionId: 'service' },
+		{ label: 'Our Process', sectionId: 'our-process' },
+		{ label: 'Contact', sectionId: 'contact' },
 	];
 
 	const socialLinks = [
 		{
 			icon: FaLinkedinIn,
 			label: 'LinkedIn',
-			link: '#',
+			link: 'https://www.linkedin.com/company/koionex',
 		},
 		{
 			icon: FaInstagram,
 			label: 'Instagram',
-			link: '#',
+			link: 'https://www.instagram.com/koionex',
 		},
 		{
 			icon: FaYoutube,
 			label: 'YouTube',
-			link: '#',
+			link: 'https://youtube.com/@koionex?si=IYbNCtX6kr0Yk-PV',
 		},
-		{
-			icon: FaDribbble,
-			label: 'Dribbble',
-			link: '#',
-		},
+		// {
+		// 	icon: FaDribbble,
+		// 	label: 'Dribbble',
+		// 	link: 'https://dribbble.com/koionex',
+		// },
 		{
 			icon: FaXTwitter,
 			label: 'X',
-			link: '#',
+			link: 'https://x.com/koionex',
 		},
 		{
 			icon: MdEmail,
@@ -58,33 +79,34 @@ const Footer = () => {
 			{/* Gradient Top Stroke */}
 			<div className='h-[1px] w-full bg-linear-to-r from-[var(--gradient-blue)] via-[var(--gradient-red)] to-[var(--gradient-orange)]' />
 
-			<div className='relative mx-auto max-w-7xl px-6 py-6'>
+			<div className='relative mx-auto max-w-7xl px-4 py-6 tablet:px-6'>
 				{/* Background Grid Decorations */}
 				<div className='grid-background pointer-events-none absolute bottom-0 left-[25%] h-32 w-48 opacity-30' />
 
 				<div className='grid-background pointer-events-none absolute right-[5%] top-12 h-32 w-48 opacity-30' />
 
 				{/* Main Content */}
-				<div className='relative z-10 grid grid-cols-1 items-start gap-10 md:grid-cols-3'>
+				<div className='relative z-10 grid grid-cols-1 items-start gap-10 tablet:grid-cols-2'>
 					{/* Left - Explore */}
-					<div className='flex flex-col'>
-						<h4 className='text-xs font-semibold text-[var(--black)]'>Explore</h4>
+					<div className='flex flex-col items-center text-center tablet:items-start tablet:text-left'>
+						<h4 className='text-lg font-semibold text-[var(--black)]'>Explore</h4>
 
-						<ul className='mt-4 space-y-2'>
-							{exploreLinks.map((link) => (
-								<li key={link}>
-									<a
-										href={`#${link.toLowerCase().replaceAll(' ', '-')}`}
-										className='text-xs text-[var(--black)] transition-colors duration-300 hover:font-medium'
-									>
-										{link}
-									</a>
+						<ul className='mt-4 flex flex-col items-center justify-center gap-3 tablet:flex-row tablet:flex-wrap tablet:items-center tablet:justify-start tablet:gap-x-3 tablet:gap-y-2'>
+							{exploreLinks.map((link, index) => (
+								<li key={link.label} className='flex items-center gap-3'>
+									<FooterLink label={link.label} sectionId={link.sectionId} />
+
+									{index < exploreLinks.length - 1 && (
+										<span className='hidden text-[var(--black)]/40 tablet:inline'>
+											&bull;
+										</span>
+									)}
 								</li>
 							))}
 						</ul>
 					</div>
 
-					{/* Center - Logo + Social */}
+					{/* Right - Logo + Social */}
 					<div className='flex flex-col items-center text-center'>
 						{/* Logo */}
 						<img src={logo} alt='Koionex' className='h-auto w-24 object-contain' />
@@ -117,24 +139,6 @@ const Footer = () => {
 								);
 							})}
 						</div>
-					</div>
-
-					{/* Right - Services */}
-					<div className='flex flex-col md:items-end'>
-						<h4 className='text-xs font-semibold text-[var(--black)]'>Service</h4>
-
-						<ul className='mt-4 space-y-2 md:text-right'>
-							{serviceLinks.map((service) => (
-								<li key={service}>
-									<a
-										href='#service'
-										className='text-xs text-[var(--black)] transition-colors duration-300 hover:font-medium'
-									>
-										{service}
-									</a>
-								</li>
-							))}
-						</ul>
 					</div>
 				</div>
 

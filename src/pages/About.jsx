@@ -4,7 +4,7 @@ import fullLogo from '../assets/images/full-logo-grid.png';
 
 const About = () => {
 	return (
-		<section className='relative w-full overflow-hidden pt-15'>
+		<section className='relative w-full overflow-hidden'>
 			<Heading title='About' />
 			{/* Background Grid Decorations */}
 
@@ -26,52 +26,61 @@ const About = () => {
 			{/* Content */}
 			<div className='relative z-10 mx-auto flex max-w-5xl flex-col items-center px-6 text-center'>
 				{/* Founded Heading */}
-				{/* Founded Heading */}
 				<div className='relative mt-10 flex flex-col items-center text-[var(--black)]'>
-					{/* Pen Mark */}
 					<img
 						src={penMark}
 						alt=''
-						className='pointer-events-none absolute left-2/2 top-[-12px] z-10 h-[150px] w-auto -translate-x-43.5'
+						className='pointer-events-none absolute left-40 top-[-0px] z-10 block h-[90px] w-auto -translate-x-29.1 tablet:left-2/2 tablet:top-[-12px] tablet:h-[150px] tablet:-translate-x-43.5'
 					/>
 
-					{/* First Line */}
-					<div className='relative z-20 flex items-center justify-center gap-4'>
-						<h2 className='text-4xl font-semibold leading-none md:text-5xl'>
+					{/* First Line — flex-wrap prevents horizontal overflow on small screens */}
+					<div className='relative z-20 flex flex-wrap items-center justify-center gap-4'>
+						<h2 className='text-3xl font-semibold leading-none tablet:text-5xl'>
 							<span className='bg-linear-to-r from-[var(--gradient-blue)] via-[var(--gradient-red)] to-[var(--gradient-orange)] bg-clip-text text-transparent'>
 								Koionex
 							</span>{' '}
 							was
 						</h2>
 
-						<span className='mt-4 text-sm font-normal md:text-base'>August 24</span>
+						<span className='ml-2 mt-4 text-sm font-normal tablet:text-base'>
+							August 24
+						</span>
 					</div>
 
 					{/* Second Line */}
-					<div className='relative z-20 mt-5 flex items-center justify-center gap-8'>
-						<h2 className='text-4xl font-semibold leading-none md:text-5xl'>
+					<div className='relative z-20 mt-5 flex flex-wrap items-center justify-center gap-8'>
+						<h2 className='text-3xl font-semibold leading-none tablet:text-5xl'>
 							founded
-							<span className='ml-4 font-normal'>on</span>
+							<span className='ml-2 font-normal'>on</span>
 						</h2>
 
-						<span className='text-5xl font-bold leading-none md:text-6xl'>2026</span>
+						<span className='text-4xl font-bold leading-none tablet:text-6xl'>
+							2026
+						</span>
 					</div>
 				</div>
 
 				{/* Top Description */}
-				<p className='mt-12 max-w-3xl text-sm leading-6 text-[var(--black)] md:text-base'>
-					We help businesses turn their ideas into clear brands, engaging digital
-					experiences, and practical technology solutions. Our work brings together
-					thoughtful design, user-focused thinking, and reliable development to
-					create digital products that are simple, useful, and meaningful.
+				<p className='mt-12 max-w-3xl text-sm leading-6 text-[var(--black)] tablet:text-base'>
+					As a <span className='font-medium'>growing technology company</span>, we
+					help businesses turn their ideas into{' '}
+					<span className='font-medium'>clear brands</span>,{' '}
+					<span className='font-medium'>engaging digital experiences</span>, and{' '}
+					<span className='font-medium'>practical technology solutions</span>. Our
+					work brings together <span className='font-medium'>thoughtful design</span>
+					, <span className='font-medium'>user-focused thinking</span>, and{' '}
+					<span className='font-medium'>reliable development</span> to create digital
+					products that are{' '}
+					<span className='font-medium'>simple, useful, and meaningful</span>.
 				</p>
 
 				{/* Logo Section */}
 				<div className='relative mt-10 flex justify-center'>
+					{/* Responsive logo width: full width on mobile, fixed on md+ */}
 					<img
 						src={fullLogo}
 						alt='Koionex'
-						className='relative z-10 w-100 md:w-104'
+						className='relative z-10 w-full max-w-xs tablet:w-100 tablet:max-w-none'
 					/>
 
 					{/* Grid behind logo */}
@@ -79,10 +88,14 @@ const About = () => {
 				</div>
 
 				{/* Bottom Description */}
-				<p className='mt-12 max-w-3xl text-sm leading-6 text-[var(--black)] md:text-base'>
-					Whether you are starting a new business, improving your online presence, or
-					developing a custom digital product, Koionex works to understand your goals
-					and transform your vision into a solution that connects your audience.
+				<p className='mt-10 max-w-3xl text-sm leading-6 text-[var(--black)] tablet:text-base'>
+					Whether you are{' '}
+					<span className='font-medium'>starting a new business</span>,{' '}
+					<span className='font-medium'>improving your online presence</span>, or{' '}
+					<span className='font-medium'>developing a custom digital product</span>,
+					Koionex works to understand your goals and transform your vision into a
+					solution that{' '}
+					<span className='font-medium'>connects you with your audience</span>.
 				</p>
 			</div>
 

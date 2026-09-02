@@ -21,7 +21,7 @@ const ServiceCard = ({
 			}}
 		>
 			{/* White Card Layer */}
-			<div className='relative min-h-[360px] overflow-hidden rounded-[15px] bg-[var(--white)]'>
+			<div className='relative overflow-hidden rounded-[15px] bg-[var(--white)]'>
 				{/* Gradient Overlay Background */}
 				<div
 					className='pointer-events-none absolute inset-0 opacity-10'
@@ -32,21 +32,23 @@ const ServiceCard = ({
 					}}
 				/>
 
-				{/* Content */}
-				<div className='relative z-10 grid min-h-[360px] grid-cols-1 md:grid-cols-2'>
-					{/* LEFT IMAGE */}
-					<div className='flex items-center justify-center p-6 md:p-8'>
+				{/* ================= CONTENT ================= */}
+				{/* Below 960px → Image top / Content bottom */}
+				{/* 960px+ → Image left / Content right */}
+				<div className='relative z-10 grid grid-cols-1 desktop:min-h-[360px] desktop:grid-cols-2'>
+					{/* ================= IMAGE ================= */}
+					<div className='flex w-full items-center justify-center px-2 pt-4 tablet:px-6 tablet:pt-6 desktop:p-8'>
 						{image && (
 							<img
 								src={image}
 								alt={heading}
-								className='h-full max-h-[300px] w-full object-contain'
+								className='h-auto w-full max-w-full object-contain desktop:max-h-[300px]'
 							/>
 						)}
 					</div>
 
-					{/* RIGHT CONTENT */}
-					<div className='flex flex-col justify-center p-6 md:p-10'>
+					{/* ================= CONTENT ================= */}
+					<div className='flex flex-col justify-center p-5 tablet:p-8 desktop:p-10'>
 						{/* Heading */}
 						<h3 className='text-lg font-semibold text-[var(--black)]'>
 							<span className='mr-2'>{number}.</span>
@@ -69,7 +71,9 @@ const ServiceCard = ({
 						{/* What We Offer */}
 						{offers.length > 0 && (
 							<div className='mt-5'>
-								<p className='mb-2 text-sm font-semibold'>What we offer:</p>
+								<p className='mb-2 text-sm font-semibold text-[var(--black)]'>
+									What we offer:
+								</p>
 
 								<div className='flex flex-wrap gap-3'>
 									{offers.map((offer, index) => (
@@ -82,7 +86,9 @@ const ServiceCard = ({
 						{/* Features */}
 						{features.length > 0 && (
 							<div className='mt-5'>
-								<p className='mb-2 text-sm font-semibold'>Feature:</p>
+								<p className='mb-2 text-sm font-semibold text-[var(--black)]'>
+									Features:
+								</p>
 
 								<div className='flex flex-wrap gap-3'>
 									{features.map((feature, index) => (

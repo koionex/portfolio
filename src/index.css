@@ -1,7 +1,16 @@
 @import 'tailwindcss';
 
+@theme {
+	--breakpoint-tablet: 520px;
+	--breakpoint-desktop: 960px;
+}
+
 * {
 	font-family: 'Circular Std', sans-serif;
+}
+
+html {
+	overflow-x: hidden;
 }
 
 :root {

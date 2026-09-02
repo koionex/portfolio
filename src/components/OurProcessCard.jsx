@@ -25,12 +25,12 @@ const OurProcessCard = ({ number, heading, description, className = '' }) => {
 				</div>
 
 				{/* Heading */}
-				<h3 className='mt-4 bg-linear-to-r from-[var(--gradient-blue)] via-[var(--gradient-red)] to-[var(--gradient-orange)] bg-clip-text text-sm font-semibold text-transparent'>
+				<h3 className='mt-4 bg-linear-to-r from-[var(--gradient-blue)] via-[var(--gradient-red)] to-[var(--gradient-orange)] bg-clip-text text-lg font-semibold text-transparent'>
 					{heading}
 				</h3>
 
 				{/* Description */}
-				<p className='mt-3 text-xs leading-5 text-[var(--black)]'>{description}</p>
+				<p className='mt-3 text-sm leading-5 text-[var(--black)]'>{description}</p>
 			</div>
 		</div>
 	);

@@ -23,7 +23,7 @@ const processes = [
 		number: 2,
 		heading: 'Feasibility Study',
 		description:
-			'We research your requirements and evaluate the technical, practical, and business feasibility of the project. This helps us identify the best solution, possible challenges, required resources, and estimated timeline.',
+			'We research your requirements and evaluate the technical, practical, and business feasibility of the project. This helps us identify the best solution, possible challenges, required resources, and an estimated timeline.',
 	},
 	{
 		number: 3,
@@ -41,7 +41,7 @@ const processes = [
 		number: 5,
 		heading: 'Development & Testing',
 		description:
-			'We build the approved solution and test it carefully to make sure it works as expected, performs reliably, and provides a smooth experience across different devices and users.',
+			'We build the approved solution and test it carefully to ensure it works as expected, performs reliably, and provides a smooth experience across different devices and users.',
 	},
 	{
 		number: 6,
@@ -59,21 +59,28 @@ const processes = [
 
 const OurProcess = () => {
 	return (
-		<section className='relative w-full overflow-hidden pt-15'>
+		<section className='relative w-full overflow-hidden'>
 			{/* Section Heading */}
 			<Heading title='Our Process' />
 
 			{/* Intro */}
-			<div className='mx-auto mt-4 max-w-3xl px-6 text-center'>
-				<p className='text-xs font-medium text-[var(--black)]'>
+			<div className='mx-auto mt-4 max-w-3xl px-4 tablet:px-6 text-center'>
+				<p className='text-xl font-medium text-[var(--black)]'>
 					From vision to valuable digital solutions.
 				</p>
 
 				<p className='mt-5 text-sm leading-6 text-[var(--black)]'>
-					We follow a clear and collaborative process to understand your goals,
-					validate your ideas, and transform them into practical digital solutions.
-					From the first conversation to post-launch support, we keep every step
-					transparent, focused, and aligned with your vision.
+					We follow a{' '}
+					<span className='font-medium'>clear and collaborative process</span> to
+					understand your goals, validate your ideas, and transform them into{' '}
+					<span className='font-medium'>practical digital solutions</span>. From the
+					first conversation to{' '}
+					<span className='font-medium'>post-launch support</span>, we keep every
+					step{' '}
+					<span className='font-medium'>
+						transparent, focused, and aligned with your vision
+					</span>
+					.
 				</p>
 			</div>
 
@@ -97,7 +104,7 @@ const OurProcess = () => {
 							}`}
 						>
 							<span
-								className={`w-[45%] text-sm font-normal text-[var(--black)] md:text-base ${
+								className={`w-[40%] text-lg font-medium text-[var(--black)] tablet:text-base ${
 									step.side === 'left' ? 'text-right' : 'text-left'
 								}`}
 							>
@@ -112,14 +119,14 @@ const OurProcess = () => {
 			{/* PROCESS CARDS */}
 			{/* ============================= */}
 
-			<div className='mx-auto mt-16 grid max-w-6xl grid-cols-1 gap-5 px-6 sm:grid-cols-2 lg:grid-cols-3'>
+			<div className='mx-auto mt-16 grid max-w-6xl grid-cols-1 gap-5 px-4 tablet:px-6 tablet:grid-cols-2 desktop:grid-cols-3'>
 				{processes.map((process, index) => (
 					<OurProcessCard
 						key={process.number}
 						number={process.number}
 						heading={process.heading}
 						description={process.description}
-						className={index === processes.length - 1 ? 'lg:col-start-2' : ''}
+						className={index === processes.length - 1 ? 'desktop:col-start-2' : ''}
 					/>
 				))}
 			</div>

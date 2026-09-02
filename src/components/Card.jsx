@@ -16,7 +16,7 @@ const Card = ({ heading, description, image, className = '', onClick }) => {
 				{/* Content */}
 				<div className='relative z-10 flex flex-col items-center px-8 pt-6 text-center'>
 					{/* Heading */}
-					<h3 className='bg-linear-to-r from-[var(--gradient-blue)] via-[var(--gradient-red)] to-[var(--gradient-orange)] bg-clip-text text-base font-semibold text-transparent'>
+					<h3 className='bg-linear-to-r from-[var(--gradient-blue)] via-[var(--gradient-red)] to-[var(--gradient-orange)] bg-clip-text text-lg font-semibold text-transparent'>
 						{heading}
 					</h3>
 
@@ -32,7 +32,7 @@ const Card = ({ heading, description, image, className = '', onClick }) => {
 						<img
 							src={image}
 							alt={heading}
-							className='w-full object-cover opacity-90 blur-[5%]'
+							className='w-full object-cover opacity-100 blur-xs'
 						/>
 					</div>
 				)}

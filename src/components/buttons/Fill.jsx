@@ -11,7 +11,7 @@ const Fill = ({ name, onClick, className = '' }) => {
 				backgroundPosition: 'center',
 			}}
 		>
-			<div className='w-full whitespace-nowrap rounded-full bg-transparent px-3 py-1.5 text-[var(--white)] transition-all duration-300 group-hover:bg-[var(--white)] group-hover:text-[var(--black)]'>
+			<div className='inline-flex w-full items-center justify-center whitespace-nowrap rounded-full bg-transparent px-3 py-1.5 text-sm font-medium text-[var(--white)] transition-all duration-300 group-hover:bg-[var(--white)] group-hover:text-[var(--black)]'>
 				{name}
 			</div>
 		</button>

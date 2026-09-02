@@ -11,7 +11,7 @@ const Stroke = ({ name, onClick, className = '' }) => {
 				backgroundPosition: 'center',
 			}}
 		>
-			<div className='w-full whitespace-nowrap rounded-full bg-[var(--white)] px-3 py-1.5 text-[var(--black)] transition-colors duration-300 group-hover:bg-transparent group-hover:text-[var(--white)]'>
+			<div className='inline-flex w-full items-center justify-center whitespace-nowrap rounded-full bg-[var(--white)] px-3 py-1.5 text-sm font-medium text-[var(--black)] transition-colors duration-300 group-hover:bg-transparent group-hover:text-[var(--white)]'>
 				{name}
 			</div>
 		</button>
