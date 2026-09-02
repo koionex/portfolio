@@ -1,37 +1,16 @@
-# Koionex — Portfolio Website
+# React + Vite
 
-Startup studio site for **Koionex** — "Design, Develop, Deploy."
-Built with React + Vite + Tailwind CSS v4. Minimal, dark (black & gray) theme, fully responsive.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Run locally
+Currently, two official plugins are available:
 
-```bash
-npm install
-npm run dev
-```
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Build for production
+## React Compiler
 
-```bash
-npm run build
-```
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-Output goes to `dist/`.
+## Expanding the ESLint configuration
 
-## Structure
-
-- `src/components/Navbar.jsx` — sticky nav, mobile menu
-- `src/components/Hero.jsx` — headline + terminal-style status card
-- `src/components/Process.jsx` — Design → Develop → Deploy pipeline
-- `src/components/Approach.jsx` — product-mindset philosophy
-- `src/components/Services.jsx` — service grid
-- `src/components/FoundingCohort.jsx` — honest 0 clients / 0 projects framing
-- `src/components/Contact.jsx` — CTA / contact
-- `src/components/Footer.jsx`
-- `src/index.css` — Tailwind v4 theme tokens (colors, fonts) via `@theme`
-
-## Customizing
-
-- Colors/fonts: edit the `@theme` block in `src/index.css`.
-- Copy: edit each component directly — content lives inline as it's a single-page site.
-- Email: replace `hello@koionex.com` in `Contact.jsx` and `Footer.jsx`.
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
